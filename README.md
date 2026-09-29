@@ -1,89 +1,25 @@
 # Blocktopograph
 
-_This project is under active development._
+本仓库是「Blocktopograph」的安卓版本获取入口，附使用资料索引。
 
-Blocktopograph is a **high-performance, multi-platform Minecraft world editor** designed to empower users with professional-grade tools for both Java and Bedrock Editions. Built with a "Performance by Default, Security by Design" philosophy, it features a shared Rust engine, a sandboxed modding system, and a modern UI.
+## 安装文件资源（夸克网盘）
 
-<a href="https://discord.gg/u8GCn23naN" title="Discord Server">
-    <img src="https://dcbadge.limes.pink/api/server/https://discord.gg/u8GCn23naN" />
-</a>
+> **Blocktopograph 安装文件资源（夸克网盘）**：[https://pan.quark.cn/s/d17e32c662d3](https://pan.quark.cn/s/d17e32c662d3)
 
-## Core Mission
+## 官方项目
 
-To provide a robust, developer-friendly ecosystem for Minecraft world manipulation, supporting Windows and Android with a unified core logic and platform-native experiences.
+- 上游项目：[Blocktopograph/Blocktopograph](https://github.com/Blocktopograph/Blocktopograph)
 
-## Key Features
+## 更多资料
 
-- **Universal Support:** Seamlessly edit both Bedrock Edition (LevelDB) and Java Edition (Anvil/NBT) worlds.
-- **High Performance:** Native Rust-based engine for ultra-fast I/O and memory efficiency.
-- **Secure Modding:** A sandboxed modding system powered by WebAssembly (Wasm), allowing mods in JavaScript, TypeScript, Rust, and more.
-- **Data Integrity:** Built-in "bad data" detectors and audit logging to prevent world corruption.
-- **Client-Server Architecture:** Support for both local editing and remote headless server management via gRPC.
-
-## Technology Stack
-
-| Component          | Technology                                      |
-| :----------------- | :---------------------------------------------- |
-| **Core Engine**    | **Rust** (Shared logic, World Parsing)          |
-| **UI Framework**   | **Tauri v2** + **React** (Desktop & Mobile)     |
-| **Bedrock Parser** | `bleveldb` (C++ FFI via Mojang's official fork) |
-| **Java Parser**    | `fastanvil` + `fastnbt` (Pure Rust)             |
-| **Plugin Runtime** | **Wasm** via **Extism/Wasmer**                  |
-| **Communication**  | **gRPC** (Tonic)                                |
-| **Styling**        | TailwindCSS + Shadcn/ui                         |
-
-## Architecture Overview
-
-The project follows a decoupled architecture where the **Shared Rust Core** handles the heavy lifting, and platform-specific layers (Tauri for Desktop/Mobile) manage the user interface.
-
-```
-┌─────────────────────────────────────────┐
-│         Shared Rust Core Engine         │
-│  (World Parsing, Plugin System, Logic)  │
-└───────────────────┬─────────────────────┘
-                    │
-           ┌────────┴────────┐
-           │                 │
-      ┌────▼────┐       ┌────▼─────┐
-      │ Desktop │       │  Mobile  │
-      │ (Tauri) │       │ (Native) │
-      └─────────┘       └──────────┘
-```
-
-## Getting Started
-
-_(Detailed installation and setup instructions will be added as the project matures.)_
-
-### Prerequisites
-
-- [Minecraft](https://www.minecraft.net/en-us/about-minecraft)
-- [Rust toolchain](https://rustup.rs/)
-- [Node.js](https://nodejs.org/) (for frontend development)
-- [Tauri CLI](https://v2.tauri.app/start/prerequisites/)
-
-## Documentation
-
-For more detailed technical details, see the [Technology Proposal](docs/technology_proposal.md).
+- [下载与安装教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Blocktopograph/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md)
+- [NBT编辑与自定义超平坦教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Blocktopograph/NBT%E7%BC%96%E8%BE%91%E4%B8%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B6%85%E5%B9%B3%E5%9D%A6%E6%95%99%E7%A8%8B.md)
+- [区块查找替换与重置教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Blocktopograph/%E5%8C%BA%E5%9D%97%E6%9F%A5%E6%89%BE%E6%9B%BF%E6%8D%A2%E4%B8%8E%E9%87%8D%E7%BD%AE%E6%95%99%E7%A8%8B.md)
+- [地图模式与传送怎么用](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Blocktopograph/%E5%9C%B0%E5%9B%BE%E6%A8%A1%E5%BC%8F%E4%B8%8E%E4%BC%A0%E9%80%81%E6%80%8E%E4%B9%88%E7%94%A8.md)
+- [存档读不到怎么办](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Blocktopograph/%E5%AD%98%E6%A1%A3%E8%AF%BB%E4%B8%8D%E5%88%B0%E6%80%8E%E4%B9%88%E5%8A%9E.md)
+- [闪退打不开的排查](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Blocktopograph/%E9%97%AA%E9%80%80%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E6%8E%92%E6%9F%A5.md)
+- [全部软件目录](https://github.com/alipymanbu/Android/blob/master/%E5%85%A8%E9%83%A8%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95.md)
 
 ---
 
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/NguyenDuck/blocktopograph.svg?variant=adaptive)](https://starchart.cc/NguyenDuck/blocktopograph)
-
-## Legal Compliance
-
-Blocktopograph is **NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**
-
-We are committed to respecting Mojang's intellectual property. This software does not redistribute Minecraft assets; it requires a legitimate local installation to function. For more details on our compliance strategy, see the [Legal Compliance section](docs/technology_proposal.md#8-legal-compliance--copyright) in our Technology Proposal.
-
-## License
-
-Licensed under either of
-
-- Apache License, Version 2.0
-  ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-- MIT license
-  ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-at your option.
+> 本仓库由上游项目 fork 而来，原始说明见[上游仓库](https://github.com/Blocktopograph/Blocktopograph)。
